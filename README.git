@@ -1,0 +1,27 @@
+PsLocalContrastSelector is an Adobe Photoshop selector plugin which attempts to build a selection based on the in-focus areas of an image. It was motivated by my dissatisfaction with the bokeh qualities of my set of camera lenses, which are high end consumer rather than professional quality. The difference in price between my kit and full frame cameras and their associated fast lenses was significant enough to warrant spending time on a plugin which could isolate areas to blur with Photoshop's gaussian or lens blur filters. A discussion at https://blog.kareldonk.com/focus-peaking-action-and-tutorial-for-photoshop/ had me thinking this was worth attempting.
+
+PsLocalContrastSelector supports Apple OSX only, and only 16bit RGB. I have tested it on Adobe Photoshop 6 version 13.0.6. I do not have (& don't intend to purchase) the CC versions of Photoshop.
+
+Building PsLocalContrastSelector
+
+1) Install the Adobe Photoshop SDK for CS6 (http://download.macromedia.com/pub/developer/photoshop/sdk/adobe_photoshop_cs6_sdk_mac.zip)
+2) Open PsLocalContrastSelector.xcodeproject in Xcode. I used version 7.3.1.
+3) In the project settings, edit the value of PHOTOSHOPSDK to indicate where you installed the SDK in step 1.
+4) The project refers to 2 resource files (PIGeneral.r, PIUtilities) from the Adobe SDK. The path to these will need to be resolved. 
+5) The build output (PsLocalContrastSelector.plugin) will need to land wherever CS6 looks for plugins, usually /Applications/Adobe Photoshop CS6/Plug-ins/<UserName>. This can be edited in the Target->Build Phases->Copy Files item.
+
+Running PsLocalContrastSelector
+
+1) The plugin only supports 16bit RGB format. Use Image -> Mode menu to set this 1st.
+2) Select a layer and click Select -> <UserName> -> Local Contrast
+3) A dialog opens which presents text fields for aperture, threshold and cores.
+     a) Aperture: The size of a square "window" within which the absolute value difference in luminance is measured. The default value of 1 is quicker, but may or may not produce the best results.
+     b) Threshold: The minimum value of luminance difference which is considered to be "in focus". I find a value of 1000 to be a good place to start.
+     c) Cores: Since the plugin looks at every pixel in the image (and on each of the RGB color planes), this can be a time consuming operation. Therefore, the process is distributed among processor cores. A value of -1 means to use all available cores. 
+
+     
+     
+TODO:
+1) Support additional (ideally all) image formats.
+2) Make the plugin interactive. Adobe discourages us from attempting this in the SDK docs, but at least one example (the dissolve filter example) shows that it is possible, at least for filter plugins. Can this be done with selection plugins?
+3) Support windows. I had played around with using Qt 5.7, but ran in to lots of problems with getting a message pump running within the context of a Photoshop plugin, which distracted me from the real work.      
