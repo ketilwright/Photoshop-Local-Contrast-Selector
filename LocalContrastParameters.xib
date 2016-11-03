@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="bnCancel" destination="rYP-y8-rAY" id="QzA-FN-yYr"/>
                 <outlet property="bnOk" destination="x0J-fi-pVf" id="2I5-mt-HKh"/>
+                <outlet property="ckNormalize" destination="Y1j-gG-pad" id="SdF-5C-O3g"/>
                 <outlet property="textAperture" destination="gBt-Rp-Zbv" id="2VN-HN-iGW"/>
                 <outlet property="textCores" destination="TxZ-Hb-V3J" id="Dcw-EG-Xzf"/>
                 <outlet property="textThreshold" destination="4cq-9j-fL2" id="wyP-sM-7VU"/>
@@ -108,6 +109,14 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button id="Y1j-gG-pad">
+                        <rect key="frame" x="51" y="18" width="83" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Normalize" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="BeP-81-EBB">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="590.5" y="456.5"/>

@@ -40,13 +40,14 @@ class ColorChannel
     int32 m_width, m_height;
     const long m_aperture;
     const long m_cores;
-
+    const bool m_normalize;
+    void normalize();
 public:
-    ColorChannel(PISelectionParams *selectionParams, ReadChannelDesc *channelDesc, long aperture, long cores);
+    ColorChannel(PISelectionParams *selectionParams, ReadChannelDesc *channelDesc, long aperture, long cores, bool m_normalize);
     ~ColorChannel();
     void probeContrast();
     // array containing local contrast
     // TODO: should be private
-    long *m_contrast;
+    uint16 *m_contrast;
     const uint16 *bits16() const { return m_bits16; }
 };

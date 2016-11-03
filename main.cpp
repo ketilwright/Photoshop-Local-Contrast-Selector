@@ -38,11 +38,12 @@ int16 Execute(PISelectionParams *selectionParamBlock)
     long aperture = 1;
     long maxContrastThreshold = 1000;
     long cores = -1;
-    
+    bool normalize = true;
     LocalContrastParameters *params = [[LocalContrastParameters alloc]
                                        initWithRadius:aperture
-                                       withThreshold:maxContrastThreshold
-                                       withCores:cores];
+                                        withThreshold:maxContrastThreshold
+                                            withCores:cores
+                                        withNormalize:normalize];
     [[params window] center];
     
     if(NSModalResponseOK == [params showWindow ])
@@ -50,8 +51,9 @@ int16 Execute(PISelectionParams *selectionParamBlock)
         aperture = [params getAperture];
         maxContrastThreshold = [params getThreshold];
         cores = [params getCores];
+        normalize = [params getNormalize];
         auto startTime = std::chrono::system_clock::now();
-        LocalContrastSelect *lcs = new LocalContrastSelect(selectionParamBlock, aperture, maxContrastThreshold, cores);
+        LocalContrastSelect *lcs = new LocalContrastSelect(selectionParamBlock, aperture, maxContrastThreshold, cores, normalize);
         auto endTime = std::chrono::system_clock::now();
         std::chrono::duration<double> duration = endTime - startTime;
         std::cout << "aperture: " << aperture << " cores: " << cores << " time: " << duration.count() << std::endl;

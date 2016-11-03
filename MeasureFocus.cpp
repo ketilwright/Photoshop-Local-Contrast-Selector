@@ -33,9 +33,9 @@ MeasureFocus::MeasureFocus(long imgWidth, long row, long aperture, const uint16 
     m_aperture(aperture),
     m_contrast(nullptr)
 {
-    m_contrast = new long[m_width];
+    m_contrast = new uint16[m_width];
     if(nullptr == m_contrast) throw "Out of memory";
-    memset(m_contrast, 0, m_width * sizeof(int16));
+    memset(m_contrast, 0, m_width * sizeof(m_contrast[0]));
 }
 
 MeasureFocus::~MeasureFocus()
@@ -52,7 +52,7 @@ void MeasureFocus::task()
     // the maximum difference in color
     for(long column = m_aperture; column < m_width - m_aperture; ++column)
     {
-        const long valBasis = m_bits[m_row * m_width + column];
+        const uint16 valBasis = m_bits[m_row * m_width + column];
         matrix<long> diffs(nRowsOfInterest, nRowsOfInterest);
         long yInx = 0;
         for(long y = -m_aperture; y < m_aperture; ++y)

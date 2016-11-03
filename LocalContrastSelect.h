@@ -32,10 +32,11 @@ class LocalContrastSelect
     const long m_aperture;
     const long m_maxContrastThreshold;
     const long m_cores;
+    const bool m_normalize;
     ColorChannel *m_redChannel, *m_greenChannel, *m_blueChannel;
     bool probeColorChannels();
 public:
-    LocalContrastSelect(PISelectionParams *params, long aperture, long maxContrastThreshold, long cores);
+    LocalContrastSelect(PISelectionParams *params, long aperture, long maxContrastThreshold, long cores, bool normalize);
     ~LocalContrastSelect();
 };
 

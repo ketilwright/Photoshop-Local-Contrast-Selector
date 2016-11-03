@@ -36,7 +36,7 @@ bool operator != (VRect const& lhs, VRect const& rhs)
 {
     return !(lhs == rhs);
 }
-ColorChannel::ColorChannel(PISelectionParams *selectionParams, ReadChannelDesc *channelDesc, long _aperture, long _cores)
+ColorChannel::ColorChannel(PISelectionParams *selectionParams, ReadChannelDesc *channelDesc, long _aperture, long _cores, bool normalize)
     :
     m_selectionParams(selectionParams),
     m_channelDesc(channelDesc),
@@ -48,7 +48,8 @@ ColorChannel::ColorChannel(PISelectionParams *selectionParams, ReadChannelDesc *
     m_bits32(nullptr),
     m_contrast(nullptr),
     m_aperture(_aperture),
-    m_cores(_cores)
+    m_cores(_cores),
+    m_normalize(normalize)
 
 {
     // keep the channel ports suite available for the entire time this object is acquired
@@ -107,7 +108,7 @@ ColorChannel::ColorChannel(PISelectionParams *selectionParams, ReadChannelDesc *
     {
         throw "bounds mismatch in pixel read operation";
     }
-    m_contrast = new long[m_width * m_height];
+    m_contrast = new uint16[m_width * m_height];
     memset(m_contrast, 0, m_width * m_height * sizeof(m_contrast[0]));
     
     
@@ -140,6 +141,9 @@ ColorChannel::~ColorChannel()
     }
     delete [] m_contrast;
 }
+// Traverse the color plane in row order. For each processor core, launch a MeasureFocus job per row.
+// Wait for completion & collect the output to m_contrast. Normalize the output to bitdepth if
+// requested.
 void ColorChannel::probeContrast()
 {
     const unsigned int maxProcs = (-1 == m_cores) ? std::thread::hardware_concurrency() : (unsigned int)m_cores;
@@ -155,12 +159,12 @@ void ColorChannel::probeContrast()
             jobs.push_back(new MeasureFocus(m_width, rowIndex++, m_aperture, m_bits16));
         }
         // launch all measure focus jobs & wait for completion.
-        for(auto job = jobs.begin(); job != jobs.end(); ++job) (*job)->spawn();
-        for(auto job = jobs.begin(); job != jobs.end(); ++job) (*job)->join();
+        for(auto j : jobs) j->spawn();
+        for(auto j : jobs) j->join();
         // collect the output
-        for(auto job = jobs.begin(); job != jobs.end(); ++job)
+        for(auto j : jobs)
         {
-            memcpy(m_contrast + outputIndex * m_width, (*job)->contrast(), m_width * sizeof(m_contrast[0]));
+            memcpy(m_contrast + outputIndex * m_width, j->contrast(), m_width * sizeof(m_contrast[0]));
             outputIndex++;
         }
         // cleanup & run the next batch
@@ -169,5 +173,25 @@ void ColorChannel::probeContrast()
             delete jobs.front();
             jobs.pop_front();
         }
+    }
+    if(m_normalize) normalize();
+}
+
+// rescales m_contrast such that it has values from 0 -> max_value_for_bit_depth
+void ColorChannel::normalize()
+{
+    uint16 max = 0;
+    for(size_t inx = 0; inx < m_width * m_height; ++inx)
+    {
+        if(m_contrast[inx] != 0)
+        {
+            max = std::max<uint16>((uint16)m_contrast[inx], max);
+        }
+    }
+    // currently supporting only 16bit planes
+    for(size_t inx = 0; inx < m_width * m_height; ++inx)
+    {
+        uint32 scaled = (m_contrast[inx] << 16) / max;
+        m_contrast[inx] = (uint16)scaled;
     }
 }

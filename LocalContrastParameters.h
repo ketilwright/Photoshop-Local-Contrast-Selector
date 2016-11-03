@@ -26,18 +26,20 @@
     IBOutlet NSTextField *textAperture;
     IBOutlet NSTextField *textThreshold;
     IBOutlet NSTextField *textCores;
+    IBOutlet NSButton    *ckNormalize;
     IBOutlet NSButton    *bnOk;
     IBOutlet NSButton    *bnCancel;
     long m_aperture;
     long m_threshold;
     long m_cores;
-
+    bool m_normalize;
 }
-- (id) initWithRadius:(long)radius withThreshold:(long)threshold withCores:(long)cores;
+- (id) initWithRadius:(long)radius withThreshold:(long)threshold withCores:(long)cores withNormalize:(bool)normal;
 - (IBAction)didClickOK:(id)sender;
 - (IBAction)didClickCancel:(id)sender;
 - (int) showWindow;
 - (long) getAperture;
 - (long) getThreshold;
 - (long) getCores;
+- (bool) getNormalize;
 @end

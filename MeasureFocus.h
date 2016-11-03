@@ -38,10 +38,10 @@ class MeasureFocus : public job
    // we probe for contrast.
    const long m_aperture;
    // the output of this job lands here
-   long *m_contrast;
+   uint16 *m_contrast;
 public:
     MeasureFocus(long imgWidth, long row, long aperture, const uint16 *p);
     ~MeasureFocus();
     void task();
-    const long * contrast() const { return m_contrast; }
+    const uint16 * contrast() const { return m_contrast; }
 };

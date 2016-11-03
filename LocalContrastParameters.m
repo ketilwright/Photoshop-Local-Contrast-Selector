@@ -27,7 +27,10 @@
 @end
 
 @implementation LocalContrastParameters
-- (id) initWithRadius:(long)radius withThreshold:(long)threshold withCores:(long)cores
+- (id) initWithRadius:(long)radius
+        withThreshold:(long)threshold
+        withCores:(long)cores
+    withNormalize:(bool)normal
 {
     self = [super initWithWindowNibName:@"LocalContrastParameters"];
     if(self)
@@ -35,6 +38,7 @@
         m_aperture = radius;
         m_threshold = threshold;
         m_cores = cores;
+        m_normalize = normal;
     }
     return self;
 }
@@ -44,6 +48,7 @@
     [textAperture setStringValue:[NSString stringWithFormat:@"%ld", m_aperture]];
     [textThreshold setStringValue:[NSString stringWithFormat:@"%ld", m_threshold]];
     [textCores setStringValue:[NSString stringWithFormat:@"%ld", m_cores]];
+    [ckNormalize setState:m_normalize ? NSOnState : NSOffState];
 }
 -(void) windowWillLoad
 {
@@ -56,6 +61,7 @@
     m_aperture = [textAperture integerValue];
     m_threshold = [textThreshold integerValue];
     m_cores = [textCores integerValue];
+    m_normalize = NSOnState == [ckNormalize state];
     [[self window] orderOut:self];
     return (int)b;
 }
@@ -82,6 +88,10 @@
 -(long) getCores
 {
     return m_cores;
+}
+-(bool) getNormalize
+{
+    return m_normalize;
 }
 
 
