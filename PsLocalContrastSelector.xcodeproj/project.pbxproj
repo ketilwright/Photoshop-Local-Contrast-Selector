@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		724E7C201DC2689100D32983 /* PIGeneral.r in Rez */ = {isa = PBXBuildFile; fileRef = 724E7C1F1DC2689100D32983 /* PIGeneral.r */; };
+		724E7C221DC268AC00D32983 /* PIUtilities.r in Rez */ = {isa = PBXBuildFile; fileRef = 724E7C211DC268AC00D32983 /* PIUtilities.r */; };
+		728618A51DC6C51F007FE351 /* PsLocalContrastSelector.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 725D97A71C6BF896004F19D8 /* PsLocalContrastSelector.plugin */; };
+		7297963C1DC8DF5100F9AA05 /* MeasureFocus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7297963B1DC8DF5100F9AA05 /* MeasureFocus.cpp */; };
+		7297963E1DC8F54700F9AA05 /* matrix.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7297963D1DC8F54700F9AA05 /* matrix.hpp */; };
+		72CB19FD1C6C13A000CC9148 /* PsLocalContrastSelector.r in Rez */ = {isa = PBXBuildFile; fileRef = 72CB19EC1C6C068700CC9148 /* PsLocalContrastSelector.r */; };
+		72ED9D1C1DCA3C4600AB485B /* ColorChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72ED9D0E1DCA3C4600AB485B /* ColorChannel.cpp */; };
+		72ED9D1D1DCA3C4600AB485B /* ColorChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 72ED9D0F1DCA3C4600AB485B /* ColorChannel.h */; };
+		72ED9D1E1DCA3C4600AB485B /* debug.h in Headers */ = {isa = PBXBuildFile; fileRef = 72ED9D101DCA3C4600AB485B /* debug.h */; };
+		72ED9D1F1DCA3C4600AB485B /* debug.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72ED9D111DCA3C4600AB485B /* debug.mm */; };
+		72ED9D221DCA3C4600AB485B /* LocalContrastParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 72ED9D141DCA3C4600AB485B /* LocalContrastParameters.h */; };
+		72ED9D231DCA3C4600AB485B /* LocalContrastParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ED9D151DCA3C4600AB485B /* LocalContrastParameters.m */; };
+		72ED9D241DCA3C4600AB485B /* LocalContrastParameters.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72ED9D161DCA3C4600AB485B /* LocalContrastParameters.xib */; };
+		72ED9D251DCA3C4600AB485B /* LocalContrastSelect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72ED9D171DCA3C4600AB485B /* LocalContrastSelect.cpp */; };
+		72ED9D261DCA3C4600AB485B /* LocalContrastSelect.h in Headers */ = {isa = PBXBuildFile; fileRef = 72ED9D181DCA3C4600AB485B /* LocalContrastSelect.h */; };
+		72ED9D271DCA3C4600AB485B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72ED9D191DCA3C4600AB485B /* main.cpp */; };
+		72ED9D2D1DCA3D3800AB485B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276AFB51C6D18F800D710CC /* Cocoa.framework */; };
+		72ED9D2F1DCA407200AB485B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72ED9D2E1DCA407200AB485B /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		728617E81DC6C4E4007FE351 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "/Applications/Adobe Photoshop CS6/Plug-ins/Ketil";
+			dstSubfolderSpec = 0;
+			files = (
+				728618A51DC6C51F007FE351 /* PsLocalContrastSelector.plugin in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		724E7C1F1DC2689100D32983 /* PIGeneral.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = PIGeneral.r; path = ../../photoshopsdk/pluginsdk/photoshopapi/resources/PIGeneral.r; sourceTree = SOURCE_ROOT; };
+		724E7C211DC268AC00D32983 /* PIUtilities.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = PIUtilities.r; path = ../../photoshopsdk/pluginsdk/samplecode/common/resources/PIUtilities.r; sourceTree = "<group>"; };
+		725D97A71C6BF896004F19D8 /* PsLocalContrastSelector.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsLocalContrastSelector.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7276AFB51C6D18F800D710CC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		729796391DC8DDCE00F9AA05 /* job.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = job.hpp; sourceTree = "<group>"; };
+		7297963A1DC8DF0F00F9AA05 /* MeasureFocus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeasureFocus.h; sourceTree = "<group>"; };
+		7297963B1DC8DF5100F9AA05 /* MeasureFocus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureFocus.cpp; sourceTree = "<group>"; };
+		7297963D1DC8F54700F9AA05 /* matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = matrix.hpp; sourceTree = "<group>"; };
+		72CB19EC1C6C068700CC9148 /* PsLocalContrastSelector.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = PsLocalContrastSelector.r; sourceTree = SOURCE_ROOT; };
+		72ED9D0E1DCA3C4600AB485B /* ColorChannel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorChannel.cpp; sourceTree = "<group>"; };
+		72ED9D0F1DCA3C4600AB485B /* ColorChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChannel.h; sourceTree = "<group>"; };
+		72ED9D101DCA3C4600AB485B /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		72ED9D111DCA3C4600AB485B /* debug.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = debug.mm; sourceTree = "<group>"; };
+		72ED9D141DCA3C4600AB485B /* LocalContrastParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalContrastParameters.h; sourceTree = "<group>"; };
+		72ED9D151DCA3C4600AB485B /* LocalContrastParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalContrastParameters.m; sourceTree = "<group>"; };
+		72ED9D161DCA3C4600AB485B /* LocalContrastParameters.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocalContrastParameters.xib; sourceTree = "<group>"; };
+		72ED9D171DCA3C4600AB485B /* LocalContrastSelect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalContrastSelect.cpp; sourceTree = "<group>"; };
+		72ED9D181DCA3C4600AB485B /* LocalContrastSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalContrastSelect.h; sourceTree = "<group>"; };
+		72ED9D191DCA3C4600AB485B /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = main.cpp; sourceTree = "<group>"; };
+		72ED9D291DCA3CE800AB485B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		72ED9D2B1DCA3CF700AB485B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		72ED9D2E1DCA407200AB485B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		725D97A41C6BF896004F19D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72ED9D2D1DCA3D3800AB485B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		725D979E1C6BF896004F19D8 = {
+			isa = PBXGroup;
+			children = (
+				72B61E061DCA3BB400D71105 /* resources */,
+				72B61E051DCA3B7C00D71105 /* inc */,
+				72B61E041DCA3B7100D71105 /* src */,
+				725D97A91C6BF896004F19D8 /* Frameworks */,
+				725D97A81C6BF896004F19D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		725D97A81C6BF896004F19D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				725D97A71C6BF896004F19D8 /* PsLocalContrastSelector.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		725D97A91C6BF896004F19D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72ED9D2B1DCA3CF700AB485B /* CoreFoundation.framework */,
+				72ED9D291DCA3CE800AB485B /* Foundation.framework */,
+				7276AFB51C6D18F800D710CC /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72B61E041DCA3B7100D71105 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				72ED9D151DCA3C4600AB485B /* LocalContrastParameters.m */,
+				72ED9D0E1DCA3C4600AB485B /* ColorChannel.cpp */,
+				72ED9D111DCA3C4600AB485B /* debug.mm */,
+				72ED9D171DCA3C4600AB485B /* LocalContrastSelect.cpp */,
+				72ED9D191DCA3C4600AB485B /* main.cpp */,
+				7297963B1DC8DF5100F9AA05 /* MeasureFocus.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		72B61E051DCA3B7C00D71105 /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				72ED9D0F1DCA3C4600AB485B /* ColorChannel.h */,
+				72ED9D101DCA3C4600AB485B /* debug.h */,
+				72ED9D141DCA3C4600AB485B /* LocalContrastParameters.h */,
+				72ED9D181DCA3C4600AB485B /* LocalContrastSelect.h */,
+				7297963D1DC8F54700F9AA05 /* matrix.hpp */,
+				7297963A1DC8DF0F00F9AA05 /* MeasureFocus.h */,
+				729796391DC8DDCE00F9AA05 /* job.hpp */,
+			);
+			name = inc;
+			sourceTree = "<group>";
+		};
+		72B61E061DCA3BB400D71105 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				72ED9D2E1DCA407200AB485B /* Info.plist */,
+				72ED9D161DCA3C4600AB485B /* LocalContrastParameters.xib */,
+				724E7C1F1DC2689100D32983 /* PIGeneral.r */,
+				724E7C211DC268AC00D32983 /* PIUtilities.r */,
+				72CB19EC1C6C068700CC9148 /* PsLocalContrastSelector.r */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		725D97A51C6BF896004F19D8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72ED9D1E1DCA3C4600AB485B /* debug.h in Headers */,
+				72ED9D261DCA3C4600AB485B /* LocalContrastSelect.h in Headers */,
+				72ED9D1D1DCA3C4600AB485B /* ColorChannel.h in Headers */,
+				72ED9D221DCA3C4600AB485B /* LocalContrastParameters.h in Headers */,
+				7297963E1DC8F54700F9AA05 /* matrix.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		725D97A61C6BF896004F19D8 /* PsLocalContrastSelector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 725D97B91C6BF896004F19D8 /* Build configuration list for PBXNativeTarget "PsLocalContrastSelector" */;
+			buildPhases = (
+				725D97A31C6BF896004F19D8 /* Sources */,
+				725D97A41C6BF896004F19D8 /* Frameworks */,
+				725D97A51C6BF896004F19D8 /* Headers */,
+				72CB19FC1C6C139600CC9148 /* Rez */,
+				7272FE2E1C922DC00003881C /* Resources */,
+				728617E81DC6C4E4007FE351 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PsLocalContrastSelector;
+			productName = PsPlugin;
+			productReference = 725D97A71C6BF896004F19D8 /* PsLocalContrastSelector.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		725D979F1C6BF896004F19D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Ketil Wright";
+				TargetAttributes = {
+					725D97A61C6BF896004F19D8 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 725D97A21C6BF896004F19D8 /* Build configuration list for PBXProject "PsLocalContrastSelector" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 725D979E1C6BF896004F19D8;
+			productRefGroup = 725D97A81C6BF896004F19D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				725D97A61C6BF896004F19D8 /* PsLocalContrastSelector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7272FE2E1C922DC00003881C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72ED9D2F1DCA407200AB485B /* Info.plist in Resources */,
+				72ED9D241DCA3C4600AB485B /* LocalContrastParameters.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		72CB19FC1C6C139600CC9148 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				724E7C201DC2689100D32983 /* PIGeneral.r in Rez */,
+				72CB19FD1C6C13A000CC9148 /* PsLocalContrastSelector.r in Rez */,
+				724E7C221DC268AC00D32983 /* PIUtilities.r in Rez */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		725D97A31C6BF896004F19D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72ED9D1C1DCA3C4600AB485B /* ColorChannel.cpp in Sources */,
+				72ED9D251DCA3C4600AB485B /* LocalContrastSelect.cpp in Sources */,
+				72ED9D271DCA3C4600AB485B /* main.cpp in Sources */,
+				7297963C1DC8DF5100F9AA05 /* MeasureFocus.cpp in Sources */,
+				72ED9D231DCA3C4600AB485B /* LocalContrastParameters.m in Sources */,
+				72ED9D1F1DCA3C4600AB485B /* debug.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		725D97B71C6BF896004F19D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				REZ_PREFIX_FILE = $PHOTOSHOPSDK/pluginsdk/samplecode/common/includes/MachOmacrezXcode.h;
+				REZ_SEARCH_PATHS = (
+					$PHOTOSHOPSDK/pluginsdk/samplecode/common/includes,
+					$PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop,
+					$PHOTOSHOPSDK/pluginsdk/samplecode/common/resources,
+				);
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop $PHOTOSHOPSDK/pluginsdk/samplecode/common/includes $PHOTOSHOPSDK/pluginsdk/photoshopapi/pica_sp";
+			};
+			name = Debug;
+		};
+		725D97B81C6BF896004F19D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				REZ_PREFIX_FILE = $PHOTOSHOPSDK/pluginsdk/samplecode/common/includes/MachOmacrezXcode.h;
+				REZ_SEARCH_PATHS = (
+					$PHOTOSHOPSDK/pluginsdk/samplecode/common/includes,
+					$PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop,
+					$PHOTOSHOPSDK/pluginsdk/samplecode/common/resources,
+				);
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop $PHOTOSHOPSDK/pluginsdk/samplecode/common/includes $PHOTOSHOPSDK/pluginsdk/photoshopapi/pica_sp";
+			};
+			name = Release;
+		};
+		725D97BA1C6BF896004F19D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Info.plist;
+				PHOTOSHOPSDK = /Users/ketil/myCode/photoshopsdk;
+				PLUGIN_TYPE = 8BSM;
+				PRODUCT_NAME = PsLocalContrastSelector;
+				REZ_SEARCH_PATHS = (
+					$PHOTOSHOPSDK/pluginsdk/samplecode/common/includes,
+					$PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop,
+					$PHOTOSHOPSDK/pluginsdk/photoshopapi/pica_sp,
+				);
+				SDKROOT = macosx10.11;
+				USER_HEADER_SEARCH_PATHS = "$PHOTOSHOPSDK/pluginsdk/samplecode/common/includes $PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop $PHOTOSHOPSDK/pluginsdk/photoshopapi/pica_sp";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		725D97BB1C6BF896004F19D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Info.plist;
+				PHOTOSHOPSDK = /Users/ketil/myCode/photoshopsdk;
+				PLUGIN_TYPE = 8BSM;
+				PRODUCT_NAME = PsLocalContrastSelector;
+				REZ_SEARCH_PATHS = (
+					$PHOTOSHOPSDK/pluginsdk/samplecode/common/includes,
+					$PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop,
+					$PHOTOSHOPSDK/pluginsdk/photoshopapi/pica_sp,
+				);
+				SDKROOT = macosx10.11;
+				USER_HEADER_SEARCH_PATHS = "$PHOTOSHOPSDK/pluginsdk/samplecode/common/includes $PHOTOSHOPSDK/pluginsdk/photoshopapi/photoshop $PHOTOSHOPSDK/pluginsdk/photoshopapi/pica_sp";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		725D97A21C6BF896004F19D8 /* Build configuration list for PBXProject "PsLocalContrastSelector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				725D97B71C6BF896004F19D8 /* Debug */,
+				725D97B81C6BF896004F19D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		725D97B91C6BF896004F19D8 /* Build configuration list for PBXNativeTarget "PsLocalContrastSelector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				725D97BA1C6BF896004F19D8 /* Debug */,
+				725D97BB1C6BF896004F19D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 725D979F1C6BF896004F19D8 /* Project object */;
+}
