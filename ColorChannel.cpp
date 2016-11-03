@@ -117,28 +117,9 @@ ColorChannel::~ColorChannel()
 {
     // release the ports suite.
     m_selectionParams->sSPBasic->ReleaseSuite(kPSChannelPortsSuite, kPSChannelPortsSuiteVersion3);
-    switch(m_doc->depth)
-    {
-        case 8:
-        {
-            delete[] m_bits8;
-            break;
-        }
-        case 16:
-        {
-            delete [] m_bits16;
-            break;
-        }
-        case 32:
-        {
-            delete [] m_bits32;
-            break;
-        }
-        default:
-        {
-            throw "unsupported bit depth";
-        }
-    }
+    delete [] m_bits8;
+    delete [] m_bits16;
+    delete [] m_bits32;
     delete [] m_contrast;
 }
 // Traverse the color plane in row order. For each processor core, launch a MeasureFocus job per row.
